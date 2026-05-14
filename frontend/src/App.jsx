@@ -58,7 +58,7 @@ function App() {
 
     setChat((prev) => [...prev, userMessage, loadingMessage])
 
-    fetch("https://nova-assistant-vdrh.onrender.com/chat",{
+    fetch("https://nova-assistant-vdrh.onrender.com/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -367,4 +367,4 @@ const styles = {
   },
 }
 
-export default AppS
+export default App
