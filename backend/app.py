@@ -11,44 +11,29 @@ def chat():
 
     message = user_message.lower()
 
+    # Default reply
+    reply = "I'm Luna Assistant 🌙 How can I help you today?"
+
     if "hello" in message or "hi" in message:
-        reply = "Hello 👋 I'm Nova Assistant. How can I help you today?"
+        reply = "Hello 👋 I'm Luna Assistant. How can I help you today?"
 
     elif "how are you" in message:
         reply = "I'm doing great 😊 Thanks for asking!"
 
-    elif "your name" in message:
-        reply = "My name is Nova Assistant 🤖"
+    elif "your name" in message or "what is your name" in message:
+        reply = "My name is Luna Assistant 🌙"
 
     elif "services" in message:
-        reply = "We provide AI chatbot and web development services."
-
-    elif "website" in message:
-        reply = "Our website is currently under development 🚀"
-
-    elif "price" in message or "cost" in message:
-        reply = "Pricing depends on the features and requirements."
-
-    elif "contact" in message:
-        reply = "You can contact us at support@example.com"
-
-    elif "thanks" in message or "thank you" in message:
-        reply = "You're welcome 😊"
-
-    elif "bye" in message:
-        reply = "Goodbye 👋 Have a wonderful day!"
-
-    elif "ai" in message:
-        reply = "AI stands for Artificial Intelligence 🤖"
-
-    elif "python" in message:
-        reply = "Python is a popular programming language used in AI and web development."
+        reply = "We provide AI and web development services."
 
     elif "react" in message:
-        reply = "React is a frontend JavaScript library used for building user interfaces."
+        reply = "React is a frontend JavaScript library used for building UI."
 
     elif "flask" in message:
         reply = "Flask is a lightweight Python backend framework."
+
+    elif "thank you" in message or "thanks" in message:
+        reply = "You're welcome 😊"
 
     else:
         reply = "Sorry, I am still learning. Please try asking another question 😊"

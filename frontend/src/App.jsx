@@ -12,7 +12,7 @@ function App() {
       ? JSON.parse(savedChat)
       : [
           {
-            text: "Hello 👋 How can I help you today?",
+            text: "Hello 👋 Welcome to Luna Assistant!",
             sender: "bot",
             time: new Date().toLocaleTimeString([], {
               hour: "2-digit",
@@ -58,7 +58,7 @@ function App() {
 
     setChat((prev) => [...prev, userMessage, loadingMessage])
 
-    fetch("https://nova-assistant-vdrh.onrender.com/chat", {
+    fetch("http://127.0.0.1:5000/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -92,7 +92,7 @@ function App() {
 
     setChat([
       {
-        text: "Hello 👋 How can I help you today?",
+        text: "Hello 👋 Welcome to Luna Assistant!",
         sender: "bot",
         time: new Date().toLocaleTimeString([], {
           hour: "2-digit",
@@ -115,13 +115,13 @@ function App() {
           <div style={styles.headerLeft}>
 
             <div style={styles.botIcon}>
-              🤖
+              🌙
             </div>
 
             <div>
 
               <div style={styles.botName}>
-                Nova Assistant
+                Luna Assistant
               </div>
 
               <div style={styles.status}>
@@ -149,7 +149,7 @@ function App() {
 
               {msg.sender === "bot" && (
                 <div style={styles.avatar}>
-                  🤖
+                  🌙
                 </div>
               )}
 
@@ -207,7 +207,7 @@ function App() {
         </div>
 
         <div style={styles.footer}>
-          Built using React & Flask 🚀
+          Luna Assistant • React + Flask 🚀
         </div>
 
       </div>
@@ -219,7 +219,7 @@ function App() {
 const styles = {
 
   container: {
-    backgroundColor: "#0f172a",
+    background: "linear-gradient(to bottom right, #07130d, #0f2419)",
     minHeight: "100vh",
     padding: "20px",
     boxSizing: "border-box",
@@ -231,10 +231,11 @@ const styles = {
 
   chatContainer: {
     width: "400px",
-    backgroundColor: "#111827",
-    borderRadius: "15px",
+    backgroundColor: "#101915",
+    borderRadius: "20px",
     padding: "20px",
-    boxShadow: "0px 0px 20px rgba(0,0,0,0.3)",
+    boxShadow: "0px 0px 30px rgba(0,0,0,0.5)",
+    border: "1px solid #1d2d24",
   },
 
   header: {
@@ -247,14 +248,14 @@ const styles = {
   headerLeft: {
     display: "flex",
     alignItems: "center",
-    gap: "10px",
+    gap: "12px",
   },
 
   botIcon: {
-    width: "45px",
-    height: "45px",
+    width: "48px",
+    height: "48px",
     borderRadius: "50%",
-    backgroundColor: "#2563eb",
+    backgroundColor: "#1f2d25",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -264,23 +265,24 @@ const styles = {
   botName: {
     color: "white",
     fontWeight: "bold",
-    fontSize: "16px",
+    fontSize: "17px",
   },
 
   status: {
-    color: "#22c55e",
+    color: "#8fa89b",
     fontSize: "12px",
   },
 
   chatBox: {
-    backgroundColor: "#1e293b",
-    height: "400px",
-    borderRadius: "10px",
+    backgroundColor: "#0d1411",
+    height: "420px",
+    borderRadius: "14px",
     padding: "15px",
     overflowY: "auto",
     display: "flex",
     flexDirection: "column",
-    gap: "10px",
+    gap: "12px",
+    border: "1px solid #1a2720",
   },
 
   botRow: {
@@ -297,13 +299,13 @@ const styles = {
   },
 
   avatar: {
-    fontSize: "22px",
+    fontSize: "20px",
   },
 
   botMessage: {
-    backgroundColor: "#334155",
-    padding: "12px",
-    borderRadius: "12px",
+    backgroundColor: "#3a3f3c",
+    padding: "12px 14px",
+    borderRadius: "14px",
     width: "fit-content",
     maxWidth: "75%",
     color: "white",
@@ -311,9 +313,9 @@ const styles = {
   },
 
   userMessage: {
-    backgroundColor: "#2563eb",
-    padding: "12px",
-    borderRadius: "12px",
+    backgroundColor: "#14532d",
+    padding: "12px 14px",
+    borderRadius: "14px",
     width: "fit-content",
     maxWidth: "75%",
     color: "white",
@@ -329,27 +331,32 @@ const styles = {
   input: {
     flex: 1,
     padding: "12px",
-    borderRadius: "8px",
-    border: "none",
-    fontSize: "16px",
+    borderRadius: "10px",
+    border: "1px solid #2a3a32",
+    fontSize: "15px",
+    backgroundColor: "#16211c",
+    color: "white",
+    outline: "none",
   },
 
   button: {
-    backgroundColor: "#2563eb",
+    backgroundColor: "#14532d",
     color: "white",
     border: "none",
-    padding: "12px 20px",
-    borderRadius: "8px",
+    padding: "12px 18px",
+    borderRadius: "10px",
     cursor: "pointer",
+    fontWeight: "bold",
   },
 
   clearButton: {
-    backgroundColor: "#ef4444",
+    backgroundColor: "#b91c1c",
     color: "white",
     border: "none",
     padding: "12px 16px",
-    borderRadius: "8px",
+    borderRadius: "10px",
     cursor: "pointer",
+    fontWeight: "bold",
   },
 
   time: {
@@ -361,7 +368,7 @@ const styles = {
 
   footer: {
     textAlign: "center",
-    color: "#94a3b8",
+    color: "#6b7f74",
     fontSize: "12px",
     marginTop: "15px",
   },
