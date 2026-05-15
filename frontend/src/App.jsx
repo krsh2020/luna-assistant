@@ -58,7 +58,7 @@ function App() {
 
     setChat((prev) => [...prev, userMessage, loadingMessage])
 
-    fetch("http://127.0.0.1:5000/chat", {
+    fetch("https://luna-assistant.onrender.com/chat",{
       method: "POST",
       headers: {
         "Content-Type": "application/json",
